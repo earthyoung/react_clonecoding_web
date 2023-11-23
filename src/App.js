@@ -1,5 +1,13 @@
 // import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
+
+async function userData() {
+  const url = "localhost:8000/account/health/";
+  const response = await fetch(url);
+  const jsonData = await response.json();
+  return jsonData;
+}
 
 function Header(props) {
   return <header>
@@ -33,6 +41,8 @@ function App() {
     {id: 2, title: "css", body: "css is ..."},
     {id: 3, title: "javascript", body: "javascript is ..."}
   ]
+  // const data = userData();
+  // console.log(data);
   return (
     <div>
       <Header title="WEB"></Header>
